@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+
+"""Check supported image formats."""
+
+# build-in modules
+import warnings
+import unittest
+
+# third-party modules
+
+# path changes
+
+# own modules
+import io_
+
+# information
+__author__ = "Oskar Maier"
+__version__ = "r0.1.1, 2013-09-16"
+__email__ = "oskar.maier@googlemail.com"
+__status__ = "Release"
+__description__ = "Check supported image formats."
+
+# code
+def main():
+    # load io tests
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        suite_io = unittest.TestSuite()
+        suite_io.addTests(unittest.TestLoader().loadTestsFromTestCase(io_.TestIOFacilities))
+        suite_io.addTests(unittest.TestLoader().loadTestsFromTestCase(io_.TestMetadataConsistency))
+        
+        # execute tests
+        unittest.TextTestRunner(verbosity=2).run(suite_io)
+
+if __name__ == '__main__':
+    main()

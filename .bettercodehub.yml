@@ -1,0 +1,9 @@
+exclude:
+- /doc/.*
+- /ez_setup.py
+- /lib/maxflow/src/.*
+- /bin/others/.*
+component_depth: 1
+languages:
+- cpp
+- python
